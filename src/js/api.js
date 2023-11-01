@@ -7,8 +7,8 @@ const getPokemon = async value => {
         return respons;
     }
     catch (error) {
-        //console.log(error)
+        console.log(error)
     }
 }
 
-getPokemon(ditto)
+getPokemon("ditto")
