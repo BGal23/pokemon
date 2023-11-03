@@ -2,5 +2,19 @@
 
 .container {
     margin: 0 auto 0;
-    width: 360px;
+    width: calc(100vw - 32px);
+
+    @include tablet {
+        width: calc(100vw - 64px)
+    }
+
+    @include desktop {
+        width: calc(1400px)
+    }
+}
+
+button {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
 }

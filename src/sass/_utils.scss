@@ -1,0 +1,18 @@
+//COLORS
+:root {
+    --color-pokeball-red: #EE1515;
+    --color-pokeball-black: #222224;
+    --color-pokeball-white: #FFF;
+}
+
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1440px) {
+        @content;
+    }
+}
