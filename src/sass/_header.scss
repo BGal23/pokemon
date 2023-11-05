@@ -45,7 +45,7 @@ header {
         }
     }
 
-    &__mode {
+    & label {
         display: none;
 
         @include tablet {
@@ -56,6 +56,21 @@ header {
             border-radius: 13px;
             background-color: var(--color-pokeball-white);
             box-shadow: 0 0 2px 0.5px;
+            transition: 0.5s;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 40px;
+                height: 40px;
+                background: url("../images/pokeball-icon.svg");
+                //background: linear-gradient(180deg, blue, orange);
+                position: relative;
+                bottom: 9px;
+                right: 9px;
+                transition: 0.5s;
+            }
         }
     }
     &__menu {
@@ -69,7 +84,18 @@ header {
     }
 
     & input {
-        display: none;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+
+        &:checked + label {
+            background-color: var(--color-pokeball-black);
+
+            &::after {
+            transform: translateX(65%) rotate(180deg);
+            background: url("../images/pokeball-icon-white.svg");
+            }
+        }
     }
 }
 
