@@ -1,8 +1,20 @@
 //COLORS
 :root {
-    --color-pokeball-red: #EE1515;
-    --color-pokeball-black: #222224;
-    --color-pokeball-white: #FFF;
+    //CONSTAN
+    
+    //LIGHT
+    --color-header-bg: #EE1515;
+    --color-header-second:#222224;
+    --color-body-white: #FFF;
+    //--color-pokeball-black: #222224;
+}
+
+.darkmode {
+    //DARK
+    --color-header-bg: #3b82c4;
+    --color-header-second: #e8b923;
+    --color-body-white: #222224;
+    //--color-pokeball-black: #FFF;
 }
 
 @mixin tablet {
