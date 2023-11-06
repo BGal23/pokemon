@@ -12,22 +12,27 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Pokemon Solid', sans-serif;
-    font-size: large;
-    color: var(--color-header-second);
-    transition: 0.5s;
 
     &__left {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 30px;
+        
 
         & a:nth-child(n + 2) {
             display: none;
 
             @include tablet {
                 display: inline;
+                font-family: 'Pokemon Solid', sans-serif;
+                font-size: large;
+                color: var(--color-header-second);
+                transition: 0.5s;
+
+                &:hover {
+                    scale: 1.15;
+                }
             }
         }
     }
@@ -37,43 +42,94 @@ header {
         flex-direction: row;
         align-items: center;
         gap: 30px;
+    }
 
-        & a {
-            display: none;
+    &__mode {
+        display: block;
+        width: 52px;
+        height: 26px;
+        border: 2px solid var(--color-header-second);
+        border-radius: 13px;
+        background-color: var(--color-body-white);
+        box-shadow: 0 0 1px 0.5px var(--color-header-second);
+        transition: 0.5s;
+        cursor: pointer;
 
-            @include tablet {
-                display: inline;
+        &::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: url("../images/pokeball-icon.svg");
+            position: relative;
+            bottom: 9px;
+            right: 9px;
+            transition: 0.5s;
+        }
+    }
+
+    &__checkbox {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+
+        &:checked + label {
+
+            &::after {
+            transform: translateX(65%) rotate(180deg);
+            background: url("../images/pokeball-icon-white.svg");
             }
         }
     }
 
-    & label {
+    &__search {
         display: none;
-
+        
         @include tablet {
             display: block;
-            width: 52px;
-            height: 26px;
+            width: 200px;
+            height: 32px;
             border: 2px solid var(--color-header-second);
-            border-radius: 13px;
+            color: var(--color-header-second);
+            border-radius: 16px;
             background-color: var(--color-body-white);
             box-shadow: 0 0 1px 0.5px var(--color-header-second);
             transition: 0.5s;
             cursor: pointer;
+        }
 
-            &::after {
-                content: "";
+        @include desktop {
+            width: 250px;
+        }
+
+        &--btn {
+            display: none;
+
+            @include tablet {
                 display: block;
-                width: 40px;
-                height: 40px;
-                background: url("../images/pokeball-icon.svg");
+                width: 34px;
+                height: 34px;
                 position: relative;
-                bottom: 9px;
-                right: 9px;
+                right: 60px;
+                border: 2px solid var(--color-header-second);
+                border-radius: 18px;
+                background-color: var(--color-body-white);
+                box-shadow: 0 0 1px 0.5px var(--color-header-second);
                 transition: 0.5s;
+                cursor: pointer;
+
+                & svg {
+                    fill: var(--color-header-second);
+                    transition: 0.5s;
+                }
+
+                &:hover {
+                    scale: 1.15;
+                }
             }
         }
     }
+
     &__menu {
         display: block;
         width: 40px;
@@ -85,20 +141,6 @@ header {
 
         @include tablet {
             display: none;
-        }
-    }
-
-    & input {
-        width: 0;
-        height: 0;
-        visibility: hidden;
-
-        &:checked + label {
-
-            &::after {
-            transform: translateX(65%) rotate(180deg);
-            background: url("../images/pokeball-icon-white.svg");
-            }
         }
     }
 }
